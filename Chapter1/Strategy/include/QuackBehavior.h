@@ -1,3 +1,5 @@
+#pragma once
+
 class QuackBehavior {
  public:
   virtual ~QuackBehavior();
