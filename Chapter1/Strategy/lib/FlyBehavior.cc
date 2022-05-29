@@ -4,4 +4,7 @@
 using std::cout;
 using std::endl;
 
-FlyBehavior::~FlyBehavior() { cout << "FlyBehavior::~FlyBehavior" << endl; }
+FlyBehavior::~FlyBehavior() 
+{ 
+	//cout << "FlyBehavior::~FlyBehavior" << endl; 
+}

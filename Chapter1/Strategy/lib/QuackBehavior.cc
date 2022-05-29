@@ -5,4 +5,7 @@
 using std::cout;
 using std::endl;
 
-QuackBehavior::~QuackBehavior() { cout << "QuackBehavior::~QuackBehavior" << endl; }
+QuackBehavior::~QuackBehavior() 
+{ 
+	//cout << "QuackBehavior::~QuackBehavior" << endl; 
+}

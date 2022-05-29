@@ -8,7 +8,9 @@ add_library(
   Duck.cc        
   FlyNoWay.cc     
   MallardDuck.cc       
-  Quack.cc 
+  Quack.cc
+  FlyRocketPowered.cc
+  ModelDuck.cc
 )
 
 target_include_directories(content PUBLIC ${CMAKE_SOURCE_DIR}/include)

@@ -9,11 +9,12 @@
 using std::cout;
 using std::endl;
 
-MallardDuck::MallardDuck() : Duck(new FlyWithWings(), new Quack()) {
-  cout << "MallardDuck::MallardDuck" << endl;
+MallardDuck::MallardDuck() : Duck(new FlyWithWings(), new Quack()) 
+{
+  //cout << "MallardDuck::MallardDuck" << endl;
 }
 
 void MallardDuck::display() const {
-  cout << "MallardDuck::display" << endl;
+  //cout << "MallardDuck::display" << endl;
   cout << "I'am a MallardDuck" << endl;
 }

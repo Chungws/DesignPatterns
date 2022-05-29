@@ -10,37 +10,40 @@ using std::endl;
 Duck::Duck( FlyBehavior* flyBehavior, QuackBehavior* quackBehavior) :
   _flyBehavior(flyBehavior), _quackBehavior(quackBehavior)
 {
-  cout << "Duck::Duck" << endl;
+  //cout << "Duck::Duck" << endl;
 }
 
-Duck::~Duck() { cout << "Duck::~Duck" << endl; }
+Duck::~Duck() 
+{ 
+  //cout << "Duck::~Duck" << endl; 
+}
 
 void Duck::setFlyBehavior(FlyBehavior* fb)
 {
-  cout << "Duck::setFlyBehavior" << endl;
+  //cout << "Duck::setFlyBehavior" << endl;
   _flyBehavior = std::unique_ptr<FlyBehavior>(fb);
 }
 
 void Duck::setQuackBehavior(QuackBehavior* qb)
 {
-  cout << "Duck::setQuackBehavior" << endl;
+  //cout << "Duck::setQuackBehavior" << endl;
   _quackBehavior = std::unique_ptr<QuackBehavior>(qb);
 }
 
 void Duck::performFly() const
 { 
-  cout << "Duck::performFly" << endl;
+  //cout << "Duck::performFly" << endl;
   _flyBehavior->fly();
 }
 
 void Duck::performQuack() const
 {
-  cout << "Duck::performQuack" << endl;
+  //cout << "Duck::performQuack" << endl;
   _quackBehavior->quack();
 }
 
 void Duck::swim() const
 {
-  cout << "Duck::swim" << endl;
+  //cout << "Duck::swim" << endl;
   cout << "All ducks float!" << endl;
 }
