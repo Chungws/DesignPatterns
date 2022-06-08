@@ -1,6 +1,6 @@
 #pragma once
 
-#include "PayStartegy.h"
+#include "PayStrategy.h"
 #include <map>
 #include <string>
 
@@ -15,8 +15,8 @@ class PayByPayPal : public PayStrategy {
 
   public:
     PayByPayPal();
-    void pay(int amount);
+    bool pay(int amount);
     void collectPaymentInfo();
-    void registerPayPalAccount();
+    void registPayPalAccount();
     void deletePayPalAccount(string email);
 };

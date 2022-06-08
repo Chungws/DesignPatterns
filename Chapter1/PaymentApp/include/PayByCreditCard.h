@@ -1,7 +1,7 @@
 #pragma once
 
 #include "CreditCard.h"
-#include "PayStartegy.h"
+#include "PayStrategy.h"
 #include <memory>
 #include <string>
 
@@ -12,12 +12,11 @@ class PayByCreditCard : public PayStrategy {
     bool isCardRegistered;
     bool payable;
     bool checkCreditCard();
+    void setCreditCard(CreditCard *card);
 
   public:
     PayByCreditCard();
-    void pay(int amount);
+    bool pay(int amount);
     void collectPaymentInfo();
     void registerCreditCard();
-    void setCreditCard();
-    void deleteCreditCard();
 };

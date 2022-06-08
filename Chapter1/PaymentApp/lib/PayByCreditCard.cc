@@ -11,15 +11,16 @@ using std::string;
 
 PayByCreditCard::PayByCreditCard() : payable(false), isCardRegistered(false) {}
 
-void PayByCreditCard::pay(int amount) {
+bool PayByCreditCard::pay(int amount) {
     collectPaymentInfo();
 
     if (!payable) {
         cout << "Can't pay!" << endl;
-        return;
+        return false;
     }
     cout << "Paying " << amount << " units by Credit Card" << endl;
     payable = false;
+    return true;
 }
 
 void PayByCreditCard::collectPaymentInfo() {
@@ -29,7 +30,7 @@ void PayByCreditCard::collectPaymentInfo() {
     while (true) {
         if (!isCardRegistered) {
             string command;
-            cout << "Please Register Card First" << endl;
+            cout << "Please Regist Card First" << endl;
             cout << "If You Want, Type Any Words" << endl;
             cout << "If You Don't Want, Type exit or 0" << endl;
             cin >> command;
@@ -44,11 +45,11 @@ void PayByCreditCard::collectPaymentInfo() {
             cin >> number;
             cout << "Please Enter Your Credit Card Password" << endl;
             cin >> pw;
-            if (!_creditCard.checkNumber(number)) {
+            if (!_creditCard->checkNumber(number)) {
                 cout << "Wrong Number!" << endl;
                 continue;
             }
-            if (!_creditCard.checkPw(pw)) {
+            if (!_creditCard->checkPw(pw)) {
                 cout << "Wrong Password!" << endl;
                 continue;
             }
@@ -79,10 +80,12 @@ void PayByCreditCard::registerCreditCard() {
     cout << "Please Enter Your Credit Card Password" << endl;
     cin >> pw;
 
-    std::unique_ptr<CreditCard> card(new CreditCard(number, date, cvc, pw));
+    setCreditCard(new CreditCard(number, date, cvc, pw));
+    isCardRegistered = true;
 
-    setCreditCard(card);
+    cout << "Your Credit Card is Registered!" << endl;
+}
 
-    _accountMap.emplace(email, pw);
-    cout << "Your PayPal Account is Registered!" << endl;
+void PayByCreditCard::setCreditCard(CreditCard *card) {
+    _creditCard = std::unique_ptr<CreditCard>(card);
 }
