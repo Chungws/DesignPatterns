@@ -12,6 +12,8 @@ using std::string;
 
 PayByPayPal::PayByPayPal() : payable(false), _accountMap() {}
 
+// flag 최소화하기
+
 bool PayByPayPal::pay(int amount) {
     collectPaymentInfo();
 

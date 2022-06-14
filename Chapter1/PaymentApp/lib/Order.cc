@@ -9,6 +9,7 @@ using std::endl;
 using std::map;
 using std::string;
 
+// TODO: initialize _payStrategy with Dummy Strategy
 Order::Order(map<string, int> itemList) : _itemList(itemList), _shoppingList() {
     cout << "Set Item List" << endl;
 }

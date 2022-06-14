@@ -40,6 +40,7 @@ int main(int argc, char *argv[]) {
         for (auto it = menu.begin(); it != menu.end(); ++it) {
             if (name == it->first) {
                 find = true;
+                break;
             }
         }
         if (!find) {
@@ -79,6 +80,7 @@ int main(int argc, char *argv[]) {
         order->setPayStrategy(new PayByCreditCard());
     }
 
+    // if 없이 결제 실패 여부를 내부에서 처리
     if (order->payByPayStrategy()) {
         cout << "Payment has been successful." << endl;
     }
