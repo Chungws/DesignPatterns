@@ -12,6 +12,7 @@ class Editor {
 
   public:
     Editor(string filePath);
+    void subscribe(string eventType);
     void open();
     void save();
 };

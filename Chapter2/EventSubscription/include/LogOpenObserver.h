@@ -10,5 +10,5 @@ class LogOpenObserver : public Observer {
 
   public:
     LogOpenObserver(string path);
-    void update();
+    void update(string eventType, string filePath);
 };

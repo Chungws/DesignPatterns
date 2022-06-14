@@ -17,8 +17,8 @@ class ObserverManager : public Observable {
     ObserverManager();
     void registerObserver(string eventType, Observer *o);
     void removeObserver(string eventType, Observer *o);
+    void notifyObservers(string eventType);
 
   private:
     bool verifyEventType(string eventType);
-    void notifyObservers(string eventType);
 };

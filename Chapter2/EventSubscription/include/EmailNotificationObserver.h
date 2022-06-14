@@ -10,5 +10,5 @@ class EmailNotificationObserver : public Observer {
 
   public:
     EmailNotificationObserver(string email);
-    void update();
+    void update(string eventType, string filePath);
 };
