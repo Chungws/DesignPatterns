@@ -9,15 +9,16 @@
 
 using std::map;
 using std::string;
+using std::vector;
 
 class ObserverManager : public Observable {
-    map<string, vector<std::unique_ptr<Observer>>> observers;
+    map<string, vector<std::shared_ptr<Observer>>> observers;
 
   public:
     ObserverManager();
-    void registerObserver(string eventType, Observer *o);
-    void removeObserver(string eventType, Observer *o);
-    void notifyObservers(string eventType);
+    void registerObserver(string eventType, std::shared_ptr<Observer> o);
+    void removeObserver(string eventType, std::shared_ptr<Observer> o);
+    void notifyObservers(string eventType, string filePath);
 
   private:
     bool verifyEventType(string eventType);
